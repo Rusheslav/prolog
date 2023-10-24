@@ -1,0 +1,13 @@
+sum([], 0).
+sum([Head|Tail], Total) :-
+    sum(Tail, Rest), 
+    Total is Head + Rest.
+    
+print_result(Result) :-
+    write('Сумма элементов списка: '), write(Result).
+    
+calculate_and_print_sum(List) :-
+    sum(List, Result), 
+    print_result(Result). 
+
+?- calculate_and_print_sum([1, 2, 3, 4, 5]).
